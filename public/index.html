@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Proximity nearest toolkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title></title>
+
+  <link rel="icon" sizes="192x192" href="images/proximity-icon-192x192.png">
+  <link rel="apple-touch-icon" href="images/proximity-icon-192x192.png">
+
+  <link type="text/css" rel="stylesheet" href="/firebaseui/firebaseui.css" />
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
+
+  <link rel="stylesheet" href="./styles/site.css">
+  <link rel="stylesheet" href="./styles/editor.css">
+
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    .fit-to-initial {
+      font-size: initial;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 60%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    #placesList li {
+      list-style: none;
+    }
+
+    #placesList .item {
+      position: relative;
+      border-bottom: 1px solid #888;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 65px;
+    }
+
+    #placesList .item span {
+      display: block;
+      margin-top: 4px;
+    }
+
+    #placesList .item h5,
+    #placesList .item .info {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    #placesList .item .info {
+      padding: 10px 0 10px 55px;
+    }
+
+    #placesList .info .gray {
+      color: #8a8a8a;
+    }
+
+    #placesList .info .jibun {
+      padding-left: 26px;
+      background: url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
+    }
+
+    #placesList .info .tel {
+      color: #009900;
+    }
+
+    #placesList .item .markerbg {
+      float: left;
+      position: absolute;
+      width: 36px;
+      height: 37px;
+      margin: 10px 0 0 10px;
+      background: url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+    }
+
+    #placesList .item .marker_1 {
+      background-position: 0 -10px;
+    }
+
+    #placesList .item .marker_2 {
+      background-position: 0 -56px;
+    }
+
+    #placesList .item .marker_3 {
+      background-position: 0 -102px
+    }
+
+    #placesList .item .marker_4 {
+      background-position: 0 -148px;
+    }
+
+    #placesList .item .marker_5 {
+      background-position: 0 -194px;
+    }
+
+    #placesList .item .marker_6 {
+      background-position: 0 -240px;
+    }
+
+    #placesList .item .marker_7 {
+      background-position: 0 -286px;
+    }
+
+    #placesList .item .marker_8 {
+      background-position: 0 -332px;
+    }
+
+    #placesList .item .marker_9 {
+      background-position: 0 -378px;
+    }
+
+    #placesList .item .marker_10 {
+      background-position: 0 -423px;
+    }
+
+    #placesList .item .marker_11 {
+      background-position: 0 -470px;
+    }
+
+    #placesList .item .marker_12 {
+      background-position: 0 -516px;
+    }
+
+    #placesList .item .marker_13 {
+      background-position: 0 -562px;
+    }
+
+    #placesList .item .marker_14 {
+      background-position: 0 -608px;
+    }
+
+    #placesList .item .marker_15 {
+      background-position: 0 -654px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <div class="proximity-header mdl-layout__header">
+      <div class="mdl-layout__header-row header-bar">
+        <span class="proximity-title mdl-layout-title">Tile Viewer</span>
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="proximity-header-spacer mdl-layout-spacer"></div>
+        <div class="proximity-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="placename">
+              <i class="material-icons">search</i>
+            </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="placename" placeholder="">
+          </div>
+
+          <div class="mdl-placelist__expandable">
+            <ul id="placesList"></ul>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <div class="proximity-navigation-container">
+          <nav class="proximity-navigation mdl-navigation">
+          </nav>
+        </div>
+        <span class="proximity-mobile-title mdl-layout-title">Tile Viewer</span>
+      </div>
+    </div>
+
+    <div id="meetupView" class="proximity-content mdl-layout__content">
+      <div class="proximity-map" id="map">
+      </div>
+      <div class="proximity-side-pannel">
+        <div class="proximity-options">
+          <!-- <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-explorer">
+              <input type="checkbox" id="icon-toggle-explorer" class="mdl-icon-toggle__input">
+              <i class="mdl-icon-toggle__label material-icons">explorer</i>
+            </label> -->
+          <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-grid">
+              <input type="checkbox" id="icon-toggle-grid" class="mdl-icon-toggle__input" checked = "checked">
+              <i class="mdl-icon-toggle__label material-icons">grid_on</i>
+            </label>
+          <!-- <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-geofence">
+              <input type="checkbox" id="icon-toggle-geofence" class="mdl-icon-toggle__input">
+              <i class="mdl-icon-toggle__label material-icons">layers</i>
+            </label> -->
+          <!-- <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-feedback">
+              <input type="checkbox" id="icon-toggle-feedback" class="mdl-icon-toggle__input" checked>
+              <i class="mdl-icon-toggle__label material-icons">feedback</i>
+            </label>
+            <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-store">
+              <input type="checkbox" id="icon-toggle-store" class="mdl-icon-toggle__input" checked>
+              <i class="mdl-icon-toggle__label material-icons">store_mall_directory</i>
+            </label> -->
+        </div>
+        <!-- <ul id="log"> -->
+        <div style="padding-left:15px; padding-right:15px;">
+          <div><b> Tile 해상도 : </b> <b><label id="resolutionLabel">17</label></b></div>
+          <input type="range" min="16" max="20" value="50" class="slider" id="resolutionSlide">
+        </div>
+        <div style="padding:15px">
+          <div><b> Polygon Coordinates </b></div>
+          <div>
+            <textarea id="polygonTextArea" name="content" cols="70" rows="50"></textarea>
+          </div>
+          <div>
+            <input type="button" id="polygonBtn" value="submit" />
+            <input type="button" id="clearBtn" value="clear" />
+          </div>
+        </div>
+        <!-- </ul> -->
+      </div>
+    </div>
+
+
+
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs1bPHCXCVptI5THWqk7zbk4U0eW8UyQI&libraries=places&callback=_initGoogleMap" async defer></script> -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=(Please insert appkey)&libraries=services"></script>
+
+</body>
+
+</html>

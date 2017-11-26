@@ -1,0 +1,728 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+body {
+  margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #3a99d9;
+  color: #fff;
+}
+
+::selection {
+  background-color: #3a99d9;
+  color: #fff;
+}
+
+/* generated from http://www.cssportal.com/css-ribbon-generator/ */
+.ribbon {
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#2989d8 0%, #1e5799 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #1e5799;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1e5799;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #1e5799;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1e5799;
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.spinner.hide {
+  display: none;
+}
+
+.program-item {
+  padding: 0;
+  text-align: left;
+}
+
+.program-section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.card-surface {
+  min-height: 300px;
+}
+  .proximity-desc {
+    margin-right: 10%;
+  }
+
+  .proximity-card-container .mdl-card {
+    min-height: 336px;
+    overflow: visible;
+  }
+
+  .proximity-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .proximity-card-container .mdl-card__media img {
+    width: 100%;
+  }
+
+  .proximity-card-container .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background-image: url('/storage/event_background.jpg');
+    background-size: cover;
+    padding: 0;
+  }
+
+  .proximity-card-container .mdl-card__title-text {
+    height: auto;
+
+    padding: 16px 8px 16px 16px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+  }
+
+  .proximity-card-container .mdl-card__supporting-text {
+    height: auto;
+    padding-bottom: 56px;
+  }
+
+  .proximity-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .proximity-card-container .mdl-card__actions a {
+    border-top: none;
+    font-size: 16px;
+  }
+
+  .proximity-card-container .mdl-card__menu {
+    color: #bdbdbd;
+  }
+
+.align-right {
+  text-align: right;
+}
+
+/* Firebase UI background color overrides */
+.firebaseui-idp-password,
+.firebaseui-idp-password:hover {
+  background-color: #db4437;
+}
+
+.firebaseui-idp-google,
+.firebaseui-idp-google:hover {
+  background-color: #ffffff;
+}
+
+.firebaseui-idp-google > .firebaseui-idp-text {
+  color: #757575;
+}
+
+.firebaseui-idp-github,
+.firebaseui-idp-github:hover {
+  background-color: #333333;
+}
+
+.firebaseui-idp-facebook,
+.firebaseui-idp-facebook:hover {
+  background-color: #3b5998;
+}
+
+.firebaseui-idp-twitter,
+.firebaseui-idp-twitter:hover {
+  background-color: #55acee;
+}
+
+.mdl-card__media .mdl-card__title-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:rgba(255, 255, 255, 0.75);
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proximity-drawer.mdl-layout__drawer {
+  z-index: 901;
+}
+
+.mdl-dialog__content .mdl-card {
+  width: initial;
+}
+
+.header-bar {
+  background-color: #5eb299;
+}
+
+.proximity-search-box .mdl-textfield__input {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.proximity-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.wide-dialog {
+  max-width: 400px;
+  width: calc(100% - 20px);
+}
+
+.login-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: #fafafa !important;
+}
+
+.proximity-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: black !important;
+}
+
+.proximity-mobile-title {
+  display: none !important;
+}
+
+
+.proximity-logo-image {
+  height: 28px;
+  width: 140px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.user-profile {
+  margin: 16px 8px 0 8px;
+}
+
+.user-image {
+  max-width: 72px;
+  max-height: 72px;
+  border-radius: 50%;
+}
+
+.user-name {
+  width: calc(100% - 16px);
+  color: #fafafa;
+}
+
+.proximity-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .proximity-header .material-icons {
+    color: #fafafa !important;
+  }
+
+  .proximity-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .proximity-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .proximity-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .proximity-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 800px;
+  }
+
+  .proximity-search-box.is-focused + .proximity-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .proximity-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .proximity-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #3a99d9;
+    }
+
+  .proximity-search-box {
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .proximity-more-button {
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+
+.proximity-drawer {
+  border-right: none;
+}
+
+  .proximity-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .proximity-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .proximity-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #3a99d9;
+  }
+
+  .proximity-drawer .mdl-layout-title {
+    position: relative;
+    background: #5eb299;
+    height: 160px;
+  }
+
+    .proximity-drawer .proximity-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
+.proximity-be-together-section {
+  position: relative;
+  height: 400px;
+  width: auto;
+  background-color: #f3f3f3;
+  /*background: url('images/slide02.png') center 100% no-repeat;*/
+  background-size: cover;
+}
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 200;
+}
+
+.proximity-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.proximity-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.proximity-create-character {
+  font-size: 21px;
+  padding-top: 400px;
+}
+
+  .proximity-create-character a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+  }
+
+.proximity-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.proximity-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.proximity-screen {
+  text-align: center;
+}
+
+.proximity-screen .proximity-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.proximity-image-link {
+  text-decoration: none;
+}
+
+.proximity-wear {
+  display: inline-block;
+  width: 160px;
+  margin-right: 32px;
+}
+
+  .proximity-wear .proximity-screen-image {
+    width: 40%;
+    z-index: 1;
+  }
+
+
+.proximity-phone {
+  display: inline-block;
+  width: 64px;
+  margin-right: 48px;
+}
+
+  .proximity-phone .proximity-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.proximity-tablet {
+  display: inline-block;
+  width: 110px;
+  margin-right: 64px;
+}
+
+  .proximity-tablet .proximity-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .proximity-tablet .proximity-link {
+    display: block;
+    z-index: 2;
+  }
+
+
+.proximity-tv {
+  display: inline-block;
+  width: 300px;
+  margin-right: 80px;
+}
+
+  .proximity-tv .proximity-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.proximity-auto {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+  .proximity-auto .proximity-screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+  }
+
+.proximity-featured-section {
+  position: relative;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+  display: none;
+}
+
+.proximity-featured-section.show {
+  display: initial;
+}
+
+.proximity-featured-band {
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
+}
+
+.proximity-featured-poster-wrapper {
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.proximity-featured-poster {
+  max-width: 100%;
+  max-height: 100%;
+  width: calc(100% - 10px);
+  margin: 5px;
+}
+
+.proximity-featured-band-text {
+  /*margin-left: 15%;*/
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .proximity-featured-band-text p {
+    padding-top: 8px;
+  }
+
+.proximity-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+  .proximity-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .proximity-link .material-icons {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+.proximity-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .proximity-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .proximity-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.proximity-customized-section {
+  text-align: center;
+}
+
+.proximity-customized-section-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+  .proximity-customized-section-text p {
+    padding-top: 16px;
+  }
+
+.proximity-customized-section-image {
+  background: url('images/devices.jpg') center top no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.proximity-more-section {
+  padding: 80px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .proximity-more-section .proximity-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.proximity-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .proximity-footer a:hover {
+    color: #8bc34a;
+  }
+
+  .proximity-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .proximity-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .proximity-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .proximity-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .proximity-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.proximity-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .proximity-navigation-container {
+    display: none;
+  }
+
+  .proximity-title {
+    display: none !important;
+  }
+
+  .proximity-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .android.proximity-search-box.is-focused ~ .proximity-mobile-title,
+  .proximity-search-box.is-focused + .proximity-navigation-container + .proximity-mobile-title {
+    opacity: 0;
+  }
+
+  .proximity-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .proximity-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .proximity-be-together-section {
+    height: 350px;
+  }
+
+  .proximity-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+  }
+
+  .proximity-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+  }
+
+  .proximity-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .proximity-create-character img {
+    height: 12px;
+  }
+
+  .proximity-fab {
+    display: none;
+  }
+
+  .proximity-featured-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .proximity-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
